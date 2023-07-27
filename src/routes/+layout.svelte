@@ -1,5 +1,12 @@
 <script lang="ts">
-    import "../app.css"
+  import { user } from "$lib/firebase";
+  import { userData } from "$lib/firebase";
+    import "../app.css";
+    
+    $user;
+    $userData;
 </script>
 
-<slot />
+<div class="min-h-screen flex flex-col">
+    <slot />
+</div>
