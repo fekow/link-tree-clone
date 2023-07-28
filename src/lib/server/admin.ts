@@ -4,11 +4,12 @@ import { FB_PROJECT_ID, FB_CLIENT_EMAIL, FB_PRIVATE_KEY } from "$env/static/priv
 import pkg from "firebase-admin";
 
 try {
+  console.log('FB_PRIVATE_KEY=',FB_PRIVATE_KEY)
   pkg.initializeApp({
     credential: pkg.credential.cert({
       projectId: FB_PROJECT_ID,
       clientEmail: FB_CLIENT_EMAIL,
-      privateKey: FB_PRIVATE_KEY,
+      privateKey: FB_PRIVATE_KEY.replace(/\\n/g, '\n'),
     }),
   });
 } catch (err:any) {
